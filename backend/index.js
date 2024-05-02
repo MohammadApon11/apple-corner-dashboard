@@ -35,6 +35,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  return res.json("Yes from Apple corner server server");
+});
+
 // login routes
 app.post("/api/auth/signup", signup);
 app.post("/api/auth/login", login);
