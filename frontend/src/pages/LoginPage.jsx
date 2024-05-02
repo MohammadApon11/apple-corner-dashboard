@@ -20,7 +20,7 @@ const LoginPage = () => {
     >
       <div className="sm:w-[420px] w-[300px] mx-auto">
         <div className="w-full p-8 rounded-lg shadow-md bg-white bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
-          <h1 className="text-3xl font-semibold text-center text-blue-600">
+          <h1 className="text-3xl font-semibold text-center text-info">
             Login
             <span className="text-violet-200"> VZ Admin Panel</span>
           </h1>

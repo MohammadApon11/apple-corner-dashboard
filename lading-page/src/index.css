@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* utility class */
+* {
+  font-family: "Poppins", sans-serif;
+}
+.text-primary {
+  color: #1d1d1f;
+}
+
+/* slider style */
+.slick-track {
+  padding-bottom: 25px;
+}
+.slick-slide {
+  padding: 0 3px;
+}
+.slick-dots {
+  bottom: -6px;
+}
+.slick-dots li button:before {
+  opacity: 50% !important;
+  font-size: 8px !important;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 100% !important;
+}

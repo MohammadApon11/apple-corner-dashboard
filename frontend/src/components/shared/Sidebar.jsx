@@ -9,12 +9,12 @@ const Sidebar = () => {
     <div className="pl-10 pt-6 bg-gray-950 h-[100vh]">
       <img className="w-[90%]" src="/logo1.png" alt="Logo" />
       <div className="flex flex-col gap-5 text-2xl mt-3">
-        <p className="font-bold text-blue-500 text-2xl">Menu</p>
+        <p className="font-bold text-info text-2xl">Menu</p>
         <div className="flex flex-col gap-2">
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-blue-600 py-2 transition-all duration-300 flex items-center gap-3"
+                ? "text-info py-2 transition-all duration-300 flex items-center gap-3"
                 : "transition-all py-2 duration-300 flex items-center gap-3"
             }
             to="/"
@@ -26,7 +26,7 @@ const Sidebar = () => {
             to="/hero"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-600 py-2 transition-all duration-300 flex items-center gap-3"
+                ? "text-info py-2 transition-all duration-300 flex items-center gap-3"
                 : "transition-all py-2 duration-300 flex items-center gap-3"
             }
           >
@@ -37,7 +37,7 @@ const Sidebar = () => {
             to="/event"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-600 py-2 transition-all duration-300 flex items-center gap-3"
+                ? "text-info py-2 transition-all duration-300 flex items-center gap-3"
                 : "transition-all py-2 duration-300 flex items-center gap-3"
             }
           >
@@ -48,7 +48,7 @@ const Sidebar = () => {
             to="/product"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-600 py-2 transition-all duration-300 flex items-center gap-3"
+                ? "text-info py-2 transition-all duration-300 flex items-center gap-3"
                 : "transition-all py-2 duration-300 flex items-center gap-3"
             }
           >

@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { baseURL } from "../../utils";
+import { useUtilesContext } from "../../context/UtilesContext";
 
 const useGetHero = () => {
   const [heroes, setHeroes] = useState([]);
   const [herosLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { makeRefresh } = useUtilesContext();
 
   useEffect(() => {
     const fetchHeroes = async () => {
@@ -32,7 +34,7 @@ const useGetHero = () => {
     return () => {
       // Cleanup code if needed
     };
-  }, []); // Empty dependency array means this effect runs once after the component mounts
+  }, [makeRefresh]); // Empty dependency array means this effect runs once after the component mounts
 
   return { heroes, herosLoading, error };
 };

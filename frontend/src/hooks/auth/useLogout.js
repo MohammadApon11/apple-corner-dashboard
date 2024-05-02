@@ -20,6 +20,7 @@ const useLogout = () => {
         throw new Error(data.error);
       }
       localStorage.removeItem("current-user");
+      localStorage.removeItem("token");
       setAuthUser(null);
     } catch (error) {
       toast.error(error.message);

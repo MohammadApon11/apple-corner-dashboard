@@ -37,19 +37,18 @@ const createHero = async (req, res) => {
     const { title, icon, description1, description2 } = req.body;
     let { image } = req.body;
 
-    if (!description1 || !description2) {
-      return res.status(400).json({ error: "Description fields are required" });
+    console.log(req.body);
+
+    if (!description1) {
+      return res
+        .status(400)
+        .json({ error: "Description 1 fields are required" });
     }
 
-    const maxLength = 25;
+    const maxLength = 40;
     if (description1.length > maxLength) {
       return res.status(400).json({
         error: `Description first line must be less than ${maxLength} characters`,
-      });
-    }
-    if (description2.length > maxLength) {
-      return res.status(400).json({
-        error: `Description second line must be less than ${maxLength} characters`,
       });
     }
 
@@ -85,18 +84,6 @@ const createEvent = async (req, res) => {
       return res.status(400).json({ error: "Description fields are required" });
     }
 
-    const maxLength = 25;
-    if (description1.length > maxLength) {
-      return res.status(400).json({
-        error: `Description first line must be less than ${maxLength} characters`,
-      });
-    }
-    if (description2.length > maxLength) {
-      return res.status(400).json({
-        error: `Description second line must be less than ${maxLength} characters`,
-      });
-    }
-
     // if (image) {
     //   const uploadedResponse = await cloudinary.uploader.upload(image);
     //   image = uploadedResponse.secure_url;
@@ -125,20 +112,8 @@ const createProduct = async (req, res) => {
     const { title, icon, description1, description2 } = req.body;
     let { image } = req.body;
 
-    if (!description1 || !description2) {
+    if (!description1) {
       return res.status(400).json({ error: "Description fields are required" });
-    }
-
-    const maxLength = 25;
-    if (description1.length > maxLength) {
-      return res.status(400).json({
-        error: `Description first line must be less than ${maxLength} characters`,
-      });
-    }
-    if (description2.length > maxLength) {
-      return res.status(400).json({
-        error: `Description second line must be less than ${maxLength} characters`,
-      });
     }
 
     // if (image) {
@@ -164,11 +139,14 @@ const createProduct = async (req, res) => {
     console.log(err);
   }
 };
+
 // update
 const updateHero = async (req, res) => {
   try {
     const { id } = req.params;
     const { title, icon, description1, description2, image } = req.body;
+
+    console.log(req.body);
 
     // Find the hero by id
     let hero = await Hero.findById(id);
@@ -182,21 +160,7 @@ const updateHero = async (req, res) => {
     if (icon) hero.icon = icon;
     if (description1) hero.description1 = description1;
     if (description2) hero.description2 = description2;
-
-    // Check if a new image is provided
-    // if (image) {
-    //   // Delete previous image from Cloudinary if it exists
-    //   if (hero.image) {
-    //     await cloudinary.uploader.destroy(hero.image); // Delete the previous image from Cloudinary
-    //   }
-
-    //   // Upload the new image to Cloudinary
-    // //   const result = await cloudinary.uploader.upload(image, {
-    // //     folder: "heroes",
-    // //   });
-    //   const result = await cloudinary.uploader.upload(image);
-    //   hero.image = result.secure_url; // Store the secure URL of the new image
-    // }
+    if (image) hero.image = image;
 
     // Save the updated hero
     await hero.save();
@@ -224,21 +188,7 @@ const updateEvent = async (req, res) => {
     if (icon) event.icon = icon;
     if (description1) event.description1 = description1;
     if (description2) event.description2 = description2;
-
-    // Check if a new image is provided
-    // if (image) {
-    //   // Delete previous image from Cloudinary if it exists
-    //   if (event.image) {
-    //     await cloudinary.uploader.destroy(event.image); // Delete the previous image from Cloudinary
-    //   }
-
-    //   // Upload the new image to Cloudinary
-    //   //   const result = await cloudinary.uploader.upload(image, {
-    //   //     folder: "events",
-    //   //   });
-    //   const result = await cloudinary.uploader.upload(image);
-    //   event.image = result.secure_url; // Store the secure URL of the new image
-    // }
+    if (image) event.image = image;
 
     // Save the updated hero
     await event.save();
@@ -266,21 +216,7 @@ const updateProduct = async (req, res) => {
     if (icon) product.icon = icon;
     if (description1) product.description1 = description1;
     if (description2) product.description2 = description2;
-
-    // Check if a new image is provided
-    // if (image) {
-    //   // Delete previous image from Cloudinary if it exists
-    //   if (product.image) {
-    //     await cloudinary.uploader.destroy(product.image); // Delete the previous image from Cloudinary
-    //   }
-
-    //   // Upload the new image to Cloudinary
-    //   const result = await cloudinary.uploader.upload(image, {
-    //     folder: "products",
-    //   });
-    //   const result = await cloudinary.uploader.upload(image)
-    //   product.image = result.secure_url; // Store the secure URL of the new image
-    // }
+    if (image) product.image = image;
 
     // Save the updated product
     await product.save();

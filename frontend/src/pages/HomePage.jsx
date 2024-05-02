@@ -14,28 +14,30 @@ const HomePage = () => {
     <div className="">
       <div className="overflow-x-auto">
         <div className="overflow-x-auto">
-          <h3 className="py-8 text-4xl text-white">Displayed Items</h3>
+          <h3 className="py-8 text-4xl text-white">Displayed Content</h3>
           <table className="table">
             {/* head */}
             <thead>
               <tr>
+                <th>Section</th>
                 <th>Title</th>
                 <th>Description-1</th>
                 <th>Description-2</th>
-                <th>Favorite Color</th>
+                <th>Icon</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {/* row 1 */}
               <tr>
+                <td>Hero</td>
                 <td>
                   <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img src={hero?.image} alt="Hero Image" />
-                      </div>
-                    </div>
+                    <img
+                      className="w-40 rounded-2xl"
+                      src={hero?.image}
+                      alt="item Image"
+                    />
                     <div>
                       <div className="font-bold">{hero?.title}</div>
                     </div>
@@ -49,13 +51,14 @@ const HomePage = () => {
               </tr>
               {/* row 2 */}
               <tr>
+                <td>Event</td>
                 <td>
                   <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img src={event?.image} alt="Event Image" />
-                      </div>
-                    </div>
+                    <img
+                      className="w-40 rounded-2xl"
+                      src={event?.image}
+                      alt="item Image"
+                    />
                     <div>
                       <div className="font-bold">{event?.title}</div>
                     </div>
@@ -64,18 +67,23 @@ const HomePage = () => {
                 <td>{event?.description1}</td>
                 <td>{event?.description2}</td>
                 <th>
-                  <img src={event?.icon} alt="Event Icon" />
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img src={event?.icon} alt="Event Image" />
+                    </div>
+                  </div>
                 </th>
               </tr>
               {/* row 3 */}
               <tr>
+                <td>Product 1</td>
                 <td>
                   <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img src={product?.image} alt="Product Image" />
-                      </div>
-                    </div>
+                    <img
+                      className="w-40 rounded-2xl"
+                      src={product?.image}
+                      alt="item Image"
+                    />
                     <div>
                       <div className="font-bold">{product?.title}</div>
                     </div>
@@ -84,7 +92,11 @@ const HomePage = () => {
                 <td>{product?.description1}</td>
                 <td>{product?.description2}</td>
                 <th>
-                  <img src={product?.icon} alt="Product Icon" />
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img src={event?.icon} alt="Event Image" />
+                    </div>
+                  </div>
                 </th>
               </tr>
             </tbody>

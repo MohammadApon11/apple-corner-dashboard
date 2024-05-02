@@ -10,11 +10,9 @@ const productSchema = mongoose.Schema(
     },
     description1: {
       type: String,
-      maxLength: 25,
     },
     description2: {
       type: String,
-      maxLength: 25,
     },
     image: {
       type: String,

@@ -10,13 +10,16 @@ const heroSchema = mongoose.Schema(
     },
     description1: {
       type: String,
-      maxLength: 25,
+      maxLength: 40,
     },
     description2: {
       type: String,
-      maxLength: 25,
+      maxLength: 40,
     },
     image: {
+      type: String,
+    },
+    public_id: {
       type: String,
     },
     selected: {
