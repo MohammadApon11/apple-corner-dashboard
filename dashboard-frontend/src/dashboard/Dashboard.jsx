@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
@@ -19,21 +24,7 @@ const Dashboard = () => {
       </div>
       <div className="col-span-9 px-8 overflow-x-hidden overflow-y-auto h-[100vh]">
         <TopHeader />
-        <Routes>
-          <Route path="/" element={authUser ? <HomePage /> : <LoginPage />} />
-          <Route
-            path="/hero"
-            element={authUser ? <HeroManagePage /> : <LoginPage />}
-          />
-          <Route
-            path="/event"
-            element={authUser ? <EventMangePage /> : <LoginPage />}
-          />
-          <Route
-            path="/product"
-            element={authUser ? <ProductManagePage /> : <LoginPage />}
-          />
-        </Routes>
+        <Outlet />
       </div>
       <div className="bg-white absolute"></div>
     </div>
