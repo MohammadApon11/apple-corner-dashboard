@@ -39,25 +39,25 @@ const {
 
 const router = express.Router();
 
-router.post("/createHero", protectRoute, createHero);
-router.post("/createEvent", protectRoute, createEvent);
-router.post("/createProduct", protectRoute, createProduct);
+router.post("/api/posts/createHero", protectRoute, createHero);
+router.post("/api/posts/createEvent", protectRoute, createEvent);
+router.post("/api/posts/createProduct", protectRoute, createProduct);
 
-router.get("/getHero", getHero);
-router.get("/getEvents", getEvents);
-router.get("/getProducts", getProducts);
+router.get("/api/posts/getHero", getHero);
+router.get("/api/posts/getEvents", getEvents);
+router.get("/api/posts/getProducts", getProducts);
 
-router.put("/updateHero/:id", protectRoute, updateHero);
-router.put("/updateEvent/:id", protectRoute, updateEvent);
-router.put("/updateProduct/:id", protectRoute, updateProduct);
+router.put("/api/posts/updateHero/:id", protectRoute, updateHero);
+router.put("/api/posts/updateEvent/:id", protectRoute, updateEvent);
+router.put("/api/posts/updateProduct/:id", protectRoute, updateProduct);
 
-router.put("/selectedHero/:id", protectRoute, selectedHero);
-router.put("/selectedEvent/:id", protectRoute, selectedEvent);
-router.put("/selectedProduct/:id", protectRoute, selectedProduct);
+router.put("/api/posts/selectedHero/:id", protectRoute, selectedHero);
+router.put("/api/posts/selectedEvent/:id", protectRoute, selectedEvent);
+router.put("/api/posts/selectedProduct/:id", protectRoute, selectedProduct);
 
-router.delete("/deleteHero/:id", protectRoute, deleteHero);
-router.delete("/deleteEvent/:id", protectRoute, deleteEvent);
-router.delete("/deleteProduct/:id", protectRoute, deleteProduct);
+router.delete("/api/posts/deleteHero/:id", protectRoute, deleteHero);
+router.delete("/api/posts/deleteEvent/:id", protectRoute, deleteEvent);
+router.delete("/api/posts/deleteProduct/:id", protectRoute, deleteProduct);
 
 module.exports = router;
 // export default router;
