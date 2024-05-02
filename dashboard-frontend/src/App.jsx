@@ -23,20 +23,6 @@ function App() {
           path="*"
           element={authUser ? <Dashboard /> : <Navigate to="/login" />}
         />
-
-        {/* <Route
-          path="/"
-          element={authUser ? <Dashboard /> : <Navigate to="/login" />}
-        >
-          <Route path="/" element={<HomePage />} />
-          <Route path="/hero" element={<HeroManagePage />} />
-          <Route path="/event" element={<EventMangePage />} />
-          <Route path="/product" element={<ProductManagePage />} />
-        </Route>
-        <Route
-          path="/login"
-          element={authUser ? <Navigate to="/" /> : <LoginPage />}
-        /> */}
       </Routes>
       <Toaster />
     </Router>
