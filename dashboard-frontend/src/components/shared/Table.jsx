@@ -13,10 +13,8 @@ const Table = ({ data, loading, showIcon = false }) => {
   const { update, loadingBtn } = useUpdate();
   const { selectedLoading, success, updateSelected } = useSelected();
   const { deleteData, loadingDelete } = useDelete();
-
   const handleIdIndex = (id, index) => {
     setId(id);
-    setIndex(index);
   };
 
   // update item all function start from here

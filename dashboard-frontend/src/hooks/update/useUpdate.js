@@ -42,10 +42,10 @@ const useUpdate = () => {
         }
       );
 
-      if (!cloudinaryResponse1.ok) {
+      if (!cloudinaryResponse1.ok && image) {
         return toast.error("Failed to update image to Cloudinary");
       }
-      if (!cloudinaryResponse2.ok) {
+      if (!cloudinaryResponse2.ok && icon) {
         return toast.error("Failed to update icon to Cloudinary");
       }
 
