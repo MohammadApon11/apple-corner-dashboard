@@ -35,7 +35,7 @@ const {
   updateHero,
   updateEvent,
   updateProduct,
-} = require("../controllers/post.controllers");
+} = require("../controllers/post.controllers.js");
 
 const router = express.Router();
 
