@@ -24,7 +24,6 @@ const Table = ({ data, loading, showIcon = false }) => {
     e.preventDefault();
     const target = e.target;
     const image = target.image.files[0];
-    const icon = target.icon.files[0];
     const title = target.title.value;
     const description1 = target.description1.value;
     const description2 = target.description1.value;
@@ -124,7 +123,7 @@ const Table = ({ data, loading, showIcon = false }) => {
         </tr>
       </thead>
       {loading ? (
-        <p className="text-center py-4 text-4xl">Loading...</p>
+        <p className="text-center py-4 text-4xl">Please wait...</p>
       ) : (
         <>
           <tbody>
@@ -250,17 +249,31 @@ const Table = ({ data, loading, showIcon = false }) => {
                           <label className="text-xl">Select Image</label>
                           <input name="image" type="file" />
                         </div>
-                        <div className="flex flex-col gap-2">
-                          <label className="text-xl">Select Icon</label>
-                          <input name="icon" type="file" />
-                        </div>
-                        <div className="flex flex-col gap-2">
-                          <label className="text-xl">Title</label>
-                          <input
-                            className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
-                            name="title"
-                          />
-                        </div>
+                        {pathname === "/product" && (
+                          <div className="flex flex-col gap-2">
+                            <label className="text-xl">Select Icon</label>
+                            <input name="icon" type="file" />
+                          </div>
+                        )}
+                        {pathname === "/hero" ? (
+                          <div className="flex flex-col gap-2">
+                            <label className="text-xl">Title</label>
+                            <input
+                              className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
+                              name="title"
+                            />
+                          </div>
+                        ) : pathname === "/product" ? (
+                          <div className="flex flex-col gap-2">
+                            <label className="text-xl">Title</label>
+                            <input
+                              className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
+                              name="title"
+                            />
+                          </div>
+                        ) : (
+                          ""
+                        )}
                         <div className="flex flex-col gap-2">
                           <label className="text-xl">Description 1 </label>
                           <input

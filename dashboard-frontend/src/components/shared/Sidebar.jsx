@@ -6,7 +6,7 @@ import { IoHomeOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   return (
-    <div className="pl-10 pt-6 bg-gray-950 h-[100vh]">
+    <div className="pl-10 pt-6 ">
       <img className="w-[90%]" src="/logo1.png" alt="Logo" />
       <div className="flex flex-col gap-5 text-2xl mt-3">
         <p className="font-bold text-info text-2xl">Menu</p>

@@ -1,11 +1,3 @@
-// import express from "express";
-// import dotenv from "dotenv";
-// import cookieParser from "cookie-parser";
-// import cors from "cors";
-// import authRoutes from "./routes/auth.routes.js";
-// import { v2 as cloudinary } from "cloudinary";
-// import postRoutes from "./routes/post.routes.js";
-// import conncectToMongoDB from "./db/connectToMongoDB.js";
 const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
@@ -41,7 +33,7 @@ mongoose.connection
   .on("error", (error) => {
     console.log(`ERROR ${error}`);
   });
-  
+
 app.listen(PORT, () => {
   // conncectToMongoDB();
   console.log(`server runnig is port ${PORT}`);

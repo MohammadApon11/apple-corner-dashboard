@@ -1,7 +1,3 @@
-// import { v2 as cloudinary } from "cloudinary";
-// import Hero from "../models/hero.model.js";
-// import Event from "../models/event.model.js";
-// import Product from "../models/product.model.js";
 const Hero = require("../models/hero.model.js");
 const Event = require("../models/event.model.js");
 const Product = require("../models/product.model.js");
@@ -54,12 +50,6 @@ const createHero = async (req, res) => {
         error: `Description first line must be less than ${maxLength} characters`,
       });
     }
-
-    // if (image) {
-    //   const uploadedResponse = await cloudinary.uploader.upload(image);
-    //   image = uploadedResponse.secure_url;
-    // }
-
     await Hero.updateMany({}, { selected: false });
 
     const newPost = new Hero({
@@ -86,11 +76,6 @@ const createEvent = async (req, res) => {
     if (!description1 || !description2) {
       return res.status(400).json({ error: "Description fields are required" });
     }
-
-    // if (image) {
-    //   const uploadedResponse = await cloudinary.uploader.upload(image);
-    //   image = uploadedResponse.secure_url;
-    // }
 
     await Event.updateMany({}, { selected: false });
 
@@ -119,10 +104,7 @@ const createProduct = async (req, res) => {
       return res.status(400).json({ error: "Description fields are required" });
     }
 
-    // if (image) {
-    //   const uploadedResponse = await cloudinary.uploader.upload(image);
-    //   image = uploadedResponse.secure_url;
-    // }
+
 
     await Product.updateMany({}, { selected: false });
 
@@ -406,20 +388,3 @@ module.exports = {
   deleteProduct,
 };
 
-// export {
-//   getHero,
-//   getEvents,
-//   getProducts,
-//   createHero,
-//   createEvent,
-//   createProduct,
-//   updateHero,
-//   updateEvent,
-//   updateProduct,
-//   selectedHero,
-//   selectedEvent,
-//   selectedProduct,
-//   deleteHero,
-//   deleteEvent,
-//   deleteProduct,
-// };

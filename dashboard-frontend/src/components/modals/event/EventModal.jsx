@@ -97,7 +97,7 @@ const EventModal = () => {
         >
           <div className="flex flex-col gap-2">
             <label className="text-xl">
-              Select Image <span className="text-red-500">*</span>
+              Select Event Image <span className="text-red-500">*</span>
             </label>
             <input
               {...register("image", { required: "Image field is required" })}

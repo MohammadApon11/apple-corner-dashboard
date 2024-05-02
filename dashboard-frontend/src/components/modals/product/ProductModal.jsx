@@ -116,7 +116,7 @@ const ProductModal = () => {
         >
           <div className="flex flex-col gap-2">
             <label className="text-xl">
-              Select Hero <span className="text-red-500">*</span>
+              Select Product Image <span className="text-red-500">*</span>
             </label>
             <input
               {...register("image", { required: "Image field is required" })}

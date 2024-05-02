@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="">
       {herosLoading ? (
-        <span className="loading loading-spinner text-8xl">Loading...</span>
+        <p className="loading loading-spinner text-4xl pt-3 text-center">Please wait...</p>
       ) : (
         <Product
           imageUrl={displayHero?.image}

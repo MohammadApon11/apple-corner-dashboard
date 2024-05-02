@@ -12,7 +12,7 @@ const GridProducts = () => {
     <div className="grid md:grid-cols-2 gap-3 my-3">
       <Event />
       {productsLoading ? (
-        <span className="loading loading-spinner text-8xl">Loading...</span>
+        <span className="loading loading-spinner text-3xl py-5">Please wait...</span>
       ) : (
         <GridProduct
           imageUrl={displayProducts?.image}

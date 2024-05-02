@@ -7,7 +7,9 @@ const Event = () => {
   return (
     <>
       {eventsLoading ? (
-        <span className="loading loading-spinner text-8xl">Loading...</span>
+        <span className="loading loading-spinner text-3xl py-5">
+          Please wait...
+        </span>
       ) : (
         <GridProduct
           imageUrl={displayEvent?.image}

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import useLogin from "../hooks/auth/useLogin";
 import { Toaster } from "react-hot-toast";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const LoginPage = () => {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
 
   const { loginLoading, login } = useLogin();
 
@@ -24,7 +26,15 @@ const LoginPage = () => {
             Login
             <span className="text-violet-200"> VZ Admin Panel</span>
           </h1>
-
+          <div className="border text-gray-200 mt-5 p-3 flex flex-col gap-2">
+            <h4>Testing credintials</h4>
+            <p>
+              Email: <span className="underline">admin@volumezero.com</span>
+            </p>
+            <p>
+              Password: <span className="underline">123456</span>
+            </p>
+          </div>
           <form
             className="mt-5 flex flex-col gap-3 text-white"
             onSubmit={handleSubmit}
@@ -50,13 +60,22 @@ const LoginPage = () => {
                   Password
                 </span>
               </label>
-              <input
-                type="password"
-                placeholder="Enter password"
-                className="w-full pl-4 text-[15px] bg-white rounded-[10px] text-gray-500 border-none outline-none h-10"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="w-full relative">
+                <input
+                  type={show ? "text" : "password"}
+                  placeholder="Enter password"
+                  className="w-full pl-4 text-[15px] bg-white rounded-[10px] text-gray-500 border-none outline-none h-10"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <div className="text-xl absolute top-[10px] right-6 text-gray-500">
+                  {show ? (
+                    <FiEyeOff onClick={() => setShow(false)} />
+                  ) : (
+                    <FiEye onClick={() => setShow(true)} />
+                  )}
+                </div>
+              </div>
             </div>
 
             <div>

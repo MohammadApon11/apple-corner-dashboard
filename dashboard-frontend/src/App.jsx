@@ -16,7 +16,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="*" element={authUser ? <Dashboard /> : <LoginPage />} />
-        {/* <Route path="/login" element={<LoginPage />} /> */}
       </Routes>
       <Toaster />
     </Router>

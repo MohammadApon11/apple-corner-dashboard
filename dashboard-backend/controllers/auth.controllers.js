@@ -1,7 +1,3 @@
-// import bcrypt from "bcryptjs";
-// import User from "../models/user.model.js";
-// import generateTokenAndSetCookie from "../utils/generateToken.js";
-// import jwt from "jsonwebtoken";
 const bcrypt = require("bcryptjs");
 const User = require("../models/user.model.js");
 const generateTokenAndSetCookie = require("../utils/generateToken.js");
