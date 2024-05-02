@@ -14,6 +14,7 @@ const authRoutes = require("./routes/auth.routes.js");
 const conncectToMongoDB = require("./db/connectToMongoDB.js");
 const postRoutes = require("./routes/post.routes.js");
 const heroModel = require("./models/hero.model.js");
+const { default: mongoose } = require("mongoose");
 const app = express();
 dotenv.config();
 
@@ -35,19 +36,24 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/posts", postRoutes);
+app.use("/api/posts", postRoutes);
 
-app.get("/api/posts/getHero", async (req, res) => {
+app.get("/api/posts/getHero", (req, res) => {
   try {
-    const post = await heroModel.find();
+    const post = heroModel.find();
 
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
-
+mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true });
+mongoose.connection
+  .once("open", () => console.log("Connected"))
+  .on("error", (error) => {
+    console.log(`ERROR ${error}`);
+  });
 app.listen(PORT, () => {
-  conncectToMongoDB();
+  // conncectToMongoDB();
   console.log(`server runnig is port ${PORT}`);
 });
