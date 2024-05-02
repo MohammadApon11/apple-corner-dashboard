@@ -1,9 +1,13 @@
-import bcrypt from "bcryptjs";
-import User from "../models/user.model.js";
-import generateTokenAndSetCookie from "../utils/generateToken.js";
-import jwt from "jsonwebtoken";
+// import bcrypt from "bcryptjs";
+// import User from "../models/user.model.js";
+// import generateTokenAndSetCookie from "../utils/generateToken.js";
+// import jwt from "jsonwebtoken";
+const bcrypt = require("bcryptjs");
+const User = require("../models/user.model");
+const generateTokenAndSetCookie = require("../utils/generateToken");
+const jwt = require("jsonwebtoken");
 
-export const signup = async (req, res) => {
+const signup = async (req, res) => {
   try {
     const { fullName, userEmail, password, confirmPassword, gender } = req.body;
     if (password !== confirmPassword) {
@@ -48,7 +52,7 @@ export const signup = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-export const login = async (req, res) => {
+const login = async (req, res) => {
   try {
     const { userEmail, password } = req.body;
     const user = await User.findOne({ userEmail });
@@ -80,7 +84,7 @@ export const login = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-export const logout = (req, res) => {
+const logout = (req, res) => {
   try {
     res.cookie("jwt", { maxAge: 0 });
     res.status(200).json({ message: "logged out successfully" });
@@ -89,3 +93,5 @@ export const logout = (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+module.exports = { signup, login, logout };

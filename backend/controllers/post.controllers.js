@@ -1,7 +1,11 @@
-import { v2 as cloudinary } from "cloudinary";
-import Hero from "../models/hero.model.js";
-import Event from "../models/event.model.js";
-import Product from "../models/product.model.js";
+// import { v2 as cloudinary } from "cloudinary";
+// import Hero from "../models/hero.model.js";
+// import Event from "../models/event.model.js";
+// import Product from "../models/product.model.js";
+const { v2: cloudinary } = require("cloudinary");
+const Hero = require("../models/hero.model");
+const Event = require("../models/event.model");
+const Product = require("../models/product.model");
 
 // get
 const getHero = async (req, res) => {
@@ -385,7 +389,7 @@ const deleteProduct = async (req, res) => {
   }
 };
 
-export {
+module.exports = {
   getHero,
   getEvents,
   getProducts,
@@ -402,3 +406,21 @@ export {
   deleteEvent,
   deleteProduct,
 };
+
+// export {
+//   getHero,
+//   getEvents,
+//   getProducts,
+//   createHero,
+//   createEvent,
+//   createProduct,
+//   updateHero,
+//   updateEvent,
+//   updateProduct,
+//   selectedHero,
+//   selectedEvent,
+//   selectedProduct,
+//   deleteHero,
+//   deleteEvent,
+//   deleteProduct,
+// };

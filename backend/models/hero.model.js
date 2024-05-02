@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const heroSchema = mongoose.Schema(
   {
@@ -31,6 +32,7 @@ const heroSchema = mongoose.Schema(
   }
 );
 
-const Hero = mongoose.model("Hero", heroSchema);
+module.exports = mongoose.model("Hero", heroSchema);
+// const Hero = mongoose.model("Hero", heroSchema);
 
-export default Hero;
+// export default Hero;

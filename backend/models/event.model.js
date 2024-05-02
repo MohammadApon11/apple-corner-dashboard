@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const eventSchema = mongoose.Schema(
   {
@@ -26,6 +27,7 @@ const eventSchema = mongoose.Schema(
   }
 );
 
-const Event = mongoose.model("Event", eventSchema);
+module.exports = mongoose.model("Event", eventSchema);
+// const Event = mongoose.model("Event", eventSchema);
 
-export default Event;
+// export default Event;
