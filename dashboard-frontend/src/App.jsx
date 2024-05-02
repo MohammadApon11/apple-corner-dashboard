@@ -15,11 +15,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="*"
-          element={authUser ? <Dashboard /> : <Navigate to="/login" />}
-        />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="*" element={authUser ? <Dashboard /> : <LoginPage />} />
+        {/* <Route path="/login" element={<LoginPage />} /> */}
       </Routes>
       <Toaster />
     </Router>
