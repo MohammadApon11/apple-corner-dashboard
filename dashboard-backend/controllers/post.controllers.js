@@ -44,12 +44,6 @@ const createHero = async (req, res) => {
         .json({ error: "Description 1 fields are required" });
     }
 
-    const maxLength = 40;
-    if (description1.length > maxLength) {
-      return res.status(400).json({
-        error: `Description first line must be less than ${maxLength} characters`,
-      });
-    }
     await Hero.updateMany({}, { selected: false });
 
     const newPost = new Hero({
@@ -103,8 +97,6 @@ const createProduct = async (req, res) => {
     if (!description1) {
       return res.status(400).json({ error: "Description fields are required" });
     }
-
-
 
     await Product.updateMany({}, { selected: false });
 
@@ -387,4 +379,3 @@ module.exports = {
   deleteEvent,
   deleteProduct,
 };
-
