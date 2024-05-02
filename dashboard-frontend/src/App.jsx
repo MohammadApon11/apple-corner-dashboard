@@ -20,6 +20,11 @@ function App() {
     <Router>
       <Routes>
         <Route
+          path="*"
+          element={authUser ? <Dashboard /> : <Navigate to="/login" />}
+        />
+
+        {/* <Route
           path="/"
           element={authUser ? <Dashboard /> : <Navigate to="/login" />}
         >
@@ -31,7 +36,7 @@ function App() {
         <Route
           path="/login"
           element={authUser ? <Navigate to="/" /> : <LoginPage />}
-        />
+        /> */}
       </Routes>
       <Toaster />
     </Router>
