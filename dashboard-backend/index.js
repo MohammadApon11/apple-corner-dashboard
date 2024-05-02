@@ -17,7 +17,6 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const router = express.Router();
 // middleware
 const corsOptions = {
   origin: "*",
@@ -42,6 +41,7 @@ mongoose.connection
   .on("error", (error) => {
     console.log(`ERROR ${error}`);
   });
+  
 app.listen(PORT, () => {
   // conncectToMongoDB();
   console.log(`server runnig is port ${PORT}`);

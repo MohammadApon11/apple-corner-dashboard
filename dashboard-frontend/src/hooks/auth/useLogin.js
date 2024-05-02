@@ -22,7 +22,6 @@ const useLogin = () => {
       if (data.error) {
         throw new Error(data.error);
       }
-
       localStorage.setItem("current-user", JSON.stringify(data));
       // Store the JWT token in localStorage
       localStorage.setItem("token", data.token);
