@@ -17,7 +17,8 @@ function App() {
   const { authUser } = useAuthContext();
 
   return (
-    <Router>
+    // <Router>
+    <>
       <Routes>
         <Route
           path="/"
@@ -49,7 +50,8 @@ function App() {
         ></Route>
       </Routes>
       <Toaster />
-    </Router>
+    </>
+    // </Router>
   );
 }
 
