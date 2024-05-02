@@ -13,12 +13,11 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth.routes.js");
 const conncectToMongoDB = require("./db/connectToMongoDB.js");
 const postRoutes = require("./routes/post.routes.js");
-
 const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-
+const router = express.Router();
 // middleware
 const corsOptions = {
   origin: "*",
