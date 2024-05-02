@@ -82,8 +82,8 @@ const HomePage = () => {
               </td>
               <td>{product?.description1}</td>
               <td>{product?.description2}</td>
-              <th className="bg-gray-200 rounded-full">
-                <div className="avatar">
+              <th className="">
+                <div className="avatar bg-white rounded-full w-16 h-16 flex items-center justify-center">
                   <div className="mask mask-squircle w-12 h-12">
                     <img src={product?.icon} alt="Event Image" />
                   </div>

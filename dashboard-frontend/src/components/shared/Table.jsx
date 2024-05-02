@@ -156,8 +156,8 @@ const Table = ({ data, loading, showIcon = false }) => {
                   <td>{item?.description1}</td>
                   <td>{item?.description2}</td>
                   {showIcon && (
-                    <td className="bg-gray-200 rounded-full">
-                      <div className="avatar">
+                    <td className="rounded-full">
+                      <div className="avatar bg-white rounded-full w-16 h-16 flex items-center justify-center">
                         <div className="mask mask-squircle w-12 h-12">
                           <img className="" src={item?.icon} alt="Icon" />
                         </div>

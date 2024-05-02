@@ -11,13 +11,13 @@ import TopHeader from "../components/shared/TopHeader";
 const Dashboard = () => {
   const { authUser } = useAuthContext();
   return (
-    <div className="relative grid grid-cols-12 gap-x-6 overflow-x-hidden bg-gradient-to-r from-violet-600 to-indigo-600">
+    <div className="relative grid grid-cols-12 overflow-x-hidden bg-gray-950">
       <div className="col-span-3">
-        <div className="fixed bg-gray-950 overflow-x-hidden h-[100vh] border-r">
+        <div className="fixed overflow-x-hidden h-[100vh] border-r">
           <Sidebar />
         </div>
       </div>
-      <div className="col-span-9 px-8  bg-gray-950 overflow-x-hidden overflow-y-auto h-[100vh]">
+      <div className="col-span-9 px-8 overflow-x-hidden overflow-y-auto h-[100vh]">
         <TopHeader />
         <Routes>
           <Route path="/" element={authUser ? <HomePage /> : <LoginPage />} />
