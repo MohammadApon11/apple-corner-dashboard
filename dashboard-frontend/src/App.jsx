@@ -41,12 +41,11 @@ function App() {
               authUser ? <ProductManagePage /> : <Navigate to="/login" />
             }
           />
+          <Route
+            path="/login"
+            element={authUser ? <Navigate to="/" /> : <LoginPage />}
+          />
         </Route>
-
-        <Route
-          path="/login"
-          element={authUser ? <Navigate to="/" /> : <LoginPage />}
-        ></Route>
       </Routes>
       <Toaster />
     </>
