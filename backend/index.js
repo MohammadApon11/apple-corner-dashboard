@@ -10,19 +10,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const { v2: cloudinary } = require("cloudinary");
-const authRoutes = require("./routes/auth.routes");
-const conncectToMongoDB = require("./db/connectToMongoDB");
-const postRoutes = require("./routes/post.routes");
+const authRoutes = require("./routes/auth.routes.js");
+const conncectToMongoDB = require("./db/connectToMongoDB.js");
+const postRoutes = require("./routes/post.routes.js");
 
 const app = express();
 dotenv.config();
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
 
 const PORT = process.env.PORT || 5000;
 

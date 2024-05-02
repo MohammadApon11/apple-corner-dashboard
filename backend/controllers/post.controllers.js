@@ -2,10 +2,9 @@
 // import Hero from "../models/hero.model.js";
 // import Event from "../models/event.model.js";
 // import Product from "../models/product.model.js";
-const { v2: cloudinary } = require("cloudinary");
-const Hero = require("../models/hero.model");
-const Event = require("../models/event.model");
-const Product = require("../models/product.model");
+const Hero = require("../models/hero.model.js");
+const Event = require("../models/event.model.js");
+const Product = require("../models/product.model.js");
 
 // get
 const getHero = async (req, res) => {

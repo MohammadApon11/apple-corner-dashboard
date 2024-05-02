@@ -3,8 +3,8 @@
 // import generateTokenAndSetCookie from "../utils/generateToken.js";
 // import jwt from "jsonwebtoken";
 const bcrypt = require("bcryptjs");
-const User = require("../models/user.model");
-const generateTokenAndSetCookie = require("../utils/generateToken");
+const User = require("../models/user.model.js");
+const generateTokenAndSetCookie = require("../utils/generateToken.js");
 const jwt = require("jsonwebtoken");
 
 const signup = async (req, res) => {

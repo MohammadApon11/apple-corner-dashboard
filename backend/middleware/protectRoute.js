@@ -1,7 +1,7 @@
 // import jwt from "jsonwebtoken";
 // import User from "../models/user.model.js";
 const jwt = require("jsonwebtoken");
-const User = require("../models/user.model");
+const User = require("../models/user.model.js");
 
 const protectRoute = async (req, res, next) => {
   try {
