@@ -16,7 +16,24 @@ const postRoutes = require("./routes/post.routes.js");
 // login import
 const { signup, login, logout } = require("./controllers/auth.controllers.js");
 const protectRoute = require("./middleware/protectRoute.js");
-const { createHero, createEvent, createProduct, getHero, getEvents, getProducts, updateHero, updateEvent, updateProduct, selectedHero, selectedEvent, selectedProduct, deleteHero, deleteEvent, deleteProduct } = require("./controllers/post.controllers.js");
+const {
+  createHero,
+  createEvent,
+  createProduct,
+  getHero,
+  getEvents,
+  getProducts,
+  updateHero,
+  updateEvent,
+  updateProduct,
+  selectedHero,
+  selectedEvent,
+  selectedProduct,
+  deleteHero,
+  deleteEvent,
+  deleteProduct,
+} = require("./controllers/post.controllers.js");
+const heroModel = require("./models/hero.model.js");
 // posts import
 
 const app = express();
@@ -49,7 +66,16 @@ app.post("/api/posts/createHero", protectRoute, createHero);
 app.post("/api/posts/createEvent", protectRoute, createEvent);
 app.post("/api/posts/createProduct", protectRoute, createProduct);
 
-app.get("/api/posts/getHero", getHero);
+// app.get("/api/posts/getHero", getHero);
+app.get("/api/posts/getHero", async (req, res) => {
+  try {
+    const post = await heroModel.find();
+
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 app.get("/api/posts/getEvents", getEvents);
 app.get("/api/posts/getProducts", getProducts);
 
