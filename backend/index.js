@@ -13,6 +13,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth.routes.js");
 const conncectToMongoDB = require("./db/connectToMongoDB.js");
 const postRoutes = require("./routes/post.routes.js");
+const heroModel = require("./models/hero.model.js");
 const app = express();
 dotenv.config();
 
@@ -34,7 +35,17 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes);
+// app.use("/api/posts", postRoutes);
+
+app.get("/api/posts/getHero", async (req, res) => {
+  try {
+    const post = await heroModel.find();
+
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 app.listen(PORT, () => {
   conncectToMongoDB();
