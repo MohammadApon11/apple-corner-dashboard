@@ -24,9 +24,9 @@ router.post("/createHero", protectRoute, createHero);
 router.post("/createEvent", protectRoute, createEvent);
 router.post("/createProduct", protectRoute, createProduct);
 
-router.get("/getHero", protectRoute, getHero);
-router.get("/getEvents", protectRoute, getEvents);
-router.get("/getProducts", protectRoute, getProducts);
+router.get("/getHero", getHero);
+router.get("/getEvents", getEvents);
+router.get("/getProducts", getProducts);
 
 router.put("/updateHero/:id", protectRoute, updateHero);
 router.put("/updateEvent/:id", protectRoute, updateEvent);

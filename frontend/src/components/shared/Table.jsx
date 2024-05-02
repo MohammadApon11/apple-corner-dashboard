@@ -7,7 +7,7 @@ import useSelected from "../../hooks/selected/useSelected";
 import useDelete from "../../hooks/useDelete/useDelete";
 import Swal from "sweetalert2";
 
-const Table = ({ data, loading }) => {
+const Table = ({ data, loading, showIcon = false }) => {
   const { pathname } = useLocation();
   const [id, setId] = useState("");
   const { update, loadingBtn } = useUpdate();
@@ -117,7 +117,7 @@ const Table = ({ data, loading }) => {
           <th>Title</th>
           <th>Description-1</th>
           <th>Description-2</th>
-          <th>Icon</th>
+          {showIcon && <th>Icon</th>}
           <th>Update</th>
           <th>Make me displayed</th>
           <th>Action</th>
@@ -156,13 +156,15 @@ const Table = ({ data, loading }) => {
                   </td>
                   <td>{item?.description1}</td>
                   <td>{item?.description2}</td>
-                  <td>
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img className="" src={item?.icon} alt="Icon" />
+                  {showIcon && (
+                    <td className="bg-gray-200 rounded-full">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img className="" src={item?.icon} alt="Icon" />
+                        </div>
                       </div>
-                    </div>
-                  </td>
+                    </td>
+                  )}
                   <td>
                     <label htmlFor={index} className="btn">
                       <FaRegEdit className="text-2xl cursor-pointer" />

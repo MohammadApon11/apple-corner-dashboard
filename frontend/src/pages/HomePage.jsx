@@ -34,7 +34,7 @@ const HomePage = () => {
                 <td>
                   <div className="flex items-center gap-3">
                     <img
-                      className="w-40 rounded-2xl"
+                      className="w-40 h-24 rounded-2xl"
                       src={hero?.image}
                       alt="item Image"
                     />
@@ -45,9 +45,6 @@ const HomePage = () => {
                 </td>
                 <td>{hero?.description1}</td>
                 <td>{hero?.description2}</td>
-                <th>
-                  <img src={hero?.icon} alt="Hero Icon" />
-                </th>
               </tr>
               {/* row 2 */}
               <tr>
@@ -66,13 +63,6 @@ const HomePage = () => {
                 </td>
                 <td>{event?.description1}</td>
                 <td>{event?.description2}</td>
-                <th>
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img src={event?.icon} alt="Event Image" />
-                    </div>
-                  </div>
-                </th>
               </tr>
               {/* row 3 */}
               <tr>
@@ -91,10 +81,10 @@ const HomePage = () => {
                 </td>
                 <td>{product?.description1}</td>
                 <td>{product?.description2}</td>
-                <th>
+                <th className="bg-gray-200 rounded-full">
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
-                      <img src={event?.icon} alt="Event Image" />
+                      <img src={product?.icon} alt="Event Image" />
                     </div>
                   </div>
                 </th>

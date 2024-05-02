@@ -19,19 +19,15 @@ const EventModal = () => {
   const onSubmit = async (data) => {
     const { title, description1, description2 } = data;
     let image = data.image[0];
-    let icon = data.icon[0];
 
     try {
+      setLoading(true);
       const token = localStorage.getItem("token");
 
       // Upload image to Cloudinary
       const formData1 = new FormData();
-      const formData2 = new FormData();
       formData1.append("file", image);
       formData1.append("upload_preset", "volumezero");
-      formData2.append("file", image);
-      formData2.append("upload_preset", "volumezero");
-      setLoading(true);
 
       const cloudinaryResponse1 = await fetch(
         "https://api.cloudinary.com/v1_1/dy1lyaog7/image/upload",
@@ -40,27 +36,14 @@ const EventModal = () => {
           body: formData1,
         }
       );
-      const cloudinaryResponse2 = await fetch(
-        "https://api.cloudinary.com/v1_1/dy1lyaog7/image/upload",
-        {
-          method: "POST",
-          body: formData2,
-        }
-      );
 
       if (!cloudinaryResponse1.ok) {
         return toast.error("Failed to upload image to Cloudinary");
       }
-      if (!cloudinaryResponse2.ok) {
-        return toast.error("Failed to upload icon to Cloudinary");
-      }
 
       const cloudinaryData1 = await cloudinaryResponse1.json();
-      const cloudinaryData2 = await cloudinaryResponse2.json();
       console.log("Uploaded image data:", cloudinaryData1);
-      console.log("Uploaded icon data:", cloudinaryData2);
       const imageUrl1 = cloudinaryData1.secure_url;
-      const icon = cloudinaryData2.secure_url;
 
       // Send POST request to createHero endpoint with image URL
       const createHeroResponse = await axios.post(
@@ -70,7 +53,6 @@ const EventModal = () => {
           description1,
           description2,
           image: imageUrl1, // Use the image URL obtained from Cloudinary
-          icon: icon, // Use the icon URL obtained from Cloudinary
         },
         {
           headers: {
@@ -125,31 +107,6 @@ const EventModal = () => {
             {errors.image && (
               <span className="text-red-500 text-[14px]">
                 {errors.image.message}
-              </span>
-            )}
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xl">
-              Select Icon{" "}
-              <span className="text-red-500 text-[12px]">Optional</span>
-            </label>
-            <input
-              {...register("icon", { required: "Icon field is required" })}
-              //   onChange={(e) => setIcon(e.target.files[0])}
-              type="file"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xl">
-              Title <span className="text-red-500">*</span>
-            </label>
-            <input
-              className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
-              {...register("title", { required: "Title field is required" })}
-            />
-            {errors.title && (
-              <span className="text-red-500 text-[14px]">
-                {errors.title.message}
               </span>
             )}
           </div>

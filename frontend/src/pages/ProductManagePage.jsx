@@ -18,7 +18,7 @@ const ProductManagePage = () => {
         </button>
       </div>
       <ProductModal />
-      <Table data={products} loading={productsLoading} />
+      <Table showIcon={true} data={products} loading={productsLoading} />
     </div>
   );
 };

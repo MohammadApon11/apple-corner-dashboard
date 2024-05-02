@@ -40,7 +40,7 @@ const useSelected = () => {
 
       if (result.isConfirmed) {
         // Open GitHub URL in a new tab
-        window.open("https://github.com/", "_blank");
+        window.open("http://localhost:5174/", "_blank");
       }
     } catch (error) {
       console.error("Error updating selected item:", error);

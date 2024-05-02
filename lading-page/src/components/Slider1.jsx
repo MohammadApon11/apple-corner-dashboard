@@ -20,12 +20,26 @@ const Slider1 = () => {
     speed: 4000,
     autoplaySpeed: 4000,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
   };
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-x-hidden">
       <Slider {...settings}>
-        {slider.map((slide) => (
-          <img className="h-[350px]" src={slide} />
+        {slider.map((slide, index) => (
+          <img
+            key={index}
+            className="3xl:h-[530px] 2xl:h-[450px] xl:h-[380px] lg:h-[320px] 800:h-[250px] md:h-[400px] sm:h-[330px] xxs:h-[280px] h-[250px]"
+            src={slide}
+          />
         ))}
       </Slider>
     </div>

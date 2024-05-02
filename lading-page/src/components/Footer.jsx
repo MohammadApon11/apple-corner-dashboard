@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -26,9 +24,9 @@ const Footer = () => {
           </p>
           <p>
             Available in the U.S. on{" "}
-            <span className="font-semibold underline cursor-pointer ">
+            <a href="#" className="font-semibold underline cursor-pointer ">
               apple.com,
-            </span>{" "}
+            </a>{" "}
             in the Apple Store app, and at Apple Stores.
           </p>
           <p>
@@ -45,9 +43,9 @@ const Footer = () => {
           </p>
           <p>
             Learn more about how Apple Card applications are evaluated at{" "}
-            <span className="font-semibold underline cursor-pointer">
+            <a href="#" className="font-semibold underline cursor-pointer">
               support.apple.com/kb/HT209218.
-            </span>
+            </a>
           </p>
           <p>A subscription is required for Apple TV+.</p>
           <p>
@@ -55,115 +53,137 @@ const Footer = () => {
             Apple Music.
           </p>
         </div>
-        <div className="grid grid-cols-5 pt-5 pb-8">
+        <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 pt-5 pb-8">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Shop And Learn</p>
-              <p>Store</p>
-              <p>Mac</p>
-              <p>iPad</p>
-              <p>iPhone</p>
-              <p>Watch</p>
-              <p>Vision</p>
-              <p>AirPods</p>
-              <p>TV & Home</p>
-              <p>AirTag</p>
-              <p>Accessories</p>
-              <p>Gift Cards</p>
+              <a href="#" className="font-bold text-primary">
+                Shop And Learn
+              </a>
+              <a href="#">Store</a>
+              <a href="#">Mac</a>
+              <a href="#">iPad</a>
+              <a href="#">iPhone</a>
+              <a href="#">Watch</a>
+              <a href="#">Vision</a>
+              <a href="#">AirPods</a>
+              <a href="#">TV & Home</a>
+              <a href="#">AirTag</a>
+              <a href="#">Accessories</a>
+              <a href="#">Gift Cards</a>
             </div>
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Apple Wallet</p>
-              <p>Wallet</p>
-              <p>Apple Card</p>
-              <p>Apple Pay</p>
-              <p>iPhone</p>
-              <p>Apple Cash</p>
+              <a href="#" className="font-bold text-primary">
+                Apple Wallet
+              </a>
+              <a href="#">Wallet</a>
+              <a href="#">Apple Card</a>
+              <a href="#">Apple Pay</a>
+              <a href="#">iPhone</a>
+              <a href="#">Apple Cash</a>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Account</p>
-              <p>Manage Your Apple ID</p>
-              <p>Apple Store Account</p>
-              <p>iCloud.com</p>
+              <a href="#" className="font-bold text-primary">
+                Account
+              </a>
+              <a href="#">Manage Your Apple ID</a>
+              <a href="#">Apple Store Account</a>
+              <a href="#">iCloud.com</a>
             </div>
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Apple Wallet</p>
-              <p>Apple One</p>
-              <p>Apple Music</p>
-              <p>Apple Arcade</p>
-              <p>Apple Fitness+</p>
-              <p>Apple News+</p>
-              <p>Apple Podcasts</p>
-              <p>Apple Books</p>
-              <p>App Store</p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Apple Store</p>
-              <p>Find a Store</p>
-              <p>Genius Bar</p>
-              <p>Today at Apple</p>
-              <p>Group Reservations</p>
-              <p>Apple Camp</p>
-              <p>Apple Store App</p>
-              <p>Certified Refurbished</p>
-              <p>Apple Trade In</p>
-              <p>Financing</p>
-              <p>Carrier Deals at Apple</p>
-              <p>Order Status</p>
-              <p>Shopping Help</p>
+              <a href="#" className="font-bold text-primary">
+                Apple Wallet
+              </a>
+              <a href="#">Apple One</a>
+              <a href="#">Apple Music</a>
+              <a href="#">Apple Arcade</a>
+              <a href="#">Apple Fitness+</a>
+              <a href="#">Apple News+</a>
+              <a href="#">Apple Podcasts</a>
+              <a href="#">Apple Books</a>
+              <a href="#">App Store</a>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">For Business</p>
-              <p>Apple and Business</p>
-              <p>Shop for Business</p>
-            </div>
-            <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">For Education</p>
-              <p>Apple and Education</p>
-              <p>Shop for K-12</p>
-              <p>Shop for College</p>
-            </div>
-            <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">For Healthcare</p>
-              <p>Apple in Healthcare</p>
-              <p>Health on Apple Watch</p>
-              <p>Health Records on iPhone</p>
-            </div>
-            <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">For Government</p>
-              <p>Shop for Government</p>
-              <p>Shop for Veterans and Military</p>
+              <a href="#" className="font-bold text-primary">
+                Apple Store
+              </a>
+              <a href="#">Find a Store</a>
+              <a href="#">Genius Bar</a>
+              <a href="#">Today at Apple</a>
+              <a href="#">Group Reservations</a>
+              <a href="#">Apple Camp</a>
+              <a href="#">Apple Store App</a>
+              <a href="#">Certified Refurbished</a>
+              <a href="#">Apple Trade In</a>
+              <a href="#">Financing</a>
+              <a href="#">Carrier Deals at Apple</a>
+              <a href="#">Order Status</a>
+              <a href="#">Shopping Help</a>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">Apple Values</p>
-              <p>Accessibility</p>
-              <p>Education</p>
-              <p>Environment</p>
-              <p>Inclusion and Diversity</p>
-              <p>Privacy</p>
-              <p>Racial Equity and Justice</p>
-              <p>Supply Chain</p>
+              <a href="#" className="font-bold text-primary">
+                For Business
+              </a>
+              <a href="#">Apple and Business</a>
+              <a href="#">Shop for Business</a>
             </div>
             <div className="flex flex-col gap-[10px] text-gray-600">
-              <p className="font-bold text-primary">About Apple</p>
-              <p>Newsroom</p>
-              <p>Apple Leadership</p>
-              <p>Career Opportunities</p>
-              <p>Investors</p>
-              <p>Ethics & Compliance</p>
-              <p>Events</p>
-              <p>Contact Apple</p>
+              <a href="#" className="font-bold text-primary">
+                For Education
+              </a>
+              <a href="#">Apple and Education</a>
+              <a href="#">Shop for K-12</a>
+              <a href="#">Shop for College</a>
+            </div>
+            <div className="flex flex-col gap-[10px] text-gray-600">
+              <a href="#" className="font-bold text-primary">
+                For Healthcare
+              </a>
+              <a href="#">Apple in Healthcare</a>
+              <a href="#">Health on Apple Watch</a>
+              <a href="#">Health Records on iPhone</a>
+            </div>
+            <div className="flex flex-col gap-[10px] text-gray-600">
+              <a href="#" className="font-bold text-primary">
+                For Government
+              </a>
+              <a href="#">Shop for Government</a>
+              <a href="#">Shop for Veterans and Military</a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-[10px] text-gray-600">
+              <a href="#" className="font-bold text-primary">
+                Apple Values
+              </a>
+              <a href="#">Accessibility</a>
+              <a href="#">Education</a>
+              <a href="#">Environment</a>
+              <a href="#">Inclusion and Diversity</a>
+              <a href="#">Privacy</a>
+              <a href="#">Racial Equity and Justice</a>
+              <a href="#">Supply Chain</a>
+            </div>
+            <div className="flex flex-col gap-[10px] text-gray-600">
+              <a href="#" className="font-bold text-primary">
+                About Apple
+              </a>
+              <a href="#">Newsroom</a>
+              <a href="#">Apple Leadership</a>
+              <a href="#">Career Opportunities</a>
+              <a href="#">Investors</a>
+              <a href="#">Ethics & Compliance</a>
+              <a href="#">Events</a>
+              <a href="#">Contact Apple</a>
             </div>
           </div>
         </div>
-        <p className="pb-5 border-b">
+        <a href="#" className="pb-5 border-b">
           More ways to shop:{" "}
           <span className="underline cursor-pointer text-[#0066CC]">
             Find an Apple Store
@@ -173,13 +193,15 @@ const Footer = () => {
             other retailer
           </span>{" "}
           near you. Or call 1-800-MY-APPLE.
-        </p>
+        </a>
         <div className="flex items-center justify-between pt-5">
-          <p>Copyright © {currentYear} Apple Inc. All rights reserved.</p>
-          <p>
+          <a href="#">
+            Copyright © {currentYear} Apple Inc. All rights reserved.
+          </a>
+          <a href="#">
             Privacy Policy | Terms of Use | Sales and Refunds | Legal | Site Map
-          </p>
-          <p>United States</p>
+          </a>
+          <a href="#">United States</a>
         </div>
       </div>
     </div>

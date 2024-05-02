@@ -17,12 +17,34 @@ const Slider2 = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     rtl: true,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="overflow-hidden pb-8">
       <Slider {...settings}>
-        {slider.map((slider) => (
-          <img className="h-[236px]" src={slider} alt="Slider img" />
+        {slider.map((slider, index) => (
+          <img
+            key={index}
+            // className="3xl:h-[306px]"
+            src={slider}
+            alt="Slider img"
+          />
         ))}
       </Slider>
     </div>
