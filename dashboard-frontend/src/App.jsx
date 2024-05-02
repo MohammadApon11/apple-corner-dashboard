@@ -23,7 +23,10 @@ function App() {
           path="/"
           element={authUser ? <Dashboard /> : <Navigate to="/login" />}
         >
-          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />}/>
+          <Route
+            path="/"
+            element={authUser ? <HomePage /> : <Navigate to="/login" />}
+          />
           <Route
             path="/hero"
             element={authUser ? <HeroManagePage /> : <Navigate to="/login" />}
@@ -34,14 +37,16 @@ function App() {
           />
           <Route
             path="/product"
-            element={authUser ? <ProductManagePage /> : <Navigate to="/login" />}
+            element={
+              authUser ? <ProductManagePage /> : <Navigate to="/login" />
+            }
           />
         </Route>
 
         <Route
           path="/login"
-          element={authUser ? <Navigate /> : <Navigate to="/" />}
-        />
+          element={authUser ? <Navigate to="/" /> : <LoginPage />}
+        ></Route>
       </Routes>
       <Toaster />
     </Router>
