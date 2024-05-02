@@ -18,7 +18,7 @@
 //   updateProduct,
 // } from "../controllers/post.controllers.js";
 const express = require("express");
-const protectRoute = require("../middleware/protectRoute.js");
+const protectRoute = require("../middleware/protectRoute");
 const {
   createHero,
   createEvent,
@@ -35,7 +35,7 @@ const {
   updateHero,
   updateEvent,
   updateProduct,
-} = require("../controllers/post.controllers.js");
+} = require("../controllers/post.controllers");
 
 const router = express.Router();
 
