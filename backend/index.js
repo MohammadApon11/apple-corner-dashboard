@@ -38,9 +38,9 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 
-app.get("/api/posts/getHero", (req, res) => {
+app.get("/api/posts/getHero", async (req, res) => {
   try {
-    const post = heroModel.find();
+    const post = await heroModel.find();
 
     res.status(200).json(post);
   } catch (err) {
