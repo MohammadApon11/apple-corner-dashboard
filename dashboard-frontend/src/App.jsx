@@ -17,7 +17,6 @@ function App() {
   const { authUser } = useAuthContext();
 
   return (
-    // <Router>
     <>
       <Routes>
         <Route
@@ -51,7 +50,6 @@ function App() {
       </Routes>
       <Toaster />
     </>
-    // </Router>
   );
 }
 
