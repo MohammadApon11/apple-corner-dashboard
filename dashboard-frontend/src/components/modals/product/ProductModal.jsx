@@ -132,7 +132,7 @@ const ProductModal = () => {
           <div className="flex flex-col gap-2">
             <label className="text-xl">
               Select Icon{" "}
-              <span className="text-red-500 text-[12px]">Optional</span>
+              <span className="text-red-500 text-[12px]">*</span>
             </label>
             <input
               {...register("icon", { required: "Icon field is required" })}
@@ -140,6 +140,11 @@ const ProductModal = () => {
               id="icon"
               type="file"
             />
+            {errors.icon && (
+              <span className="text-red-500 text-[14px]">
+                {errors.title.message}
+              </span>
+            )}
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-xl">

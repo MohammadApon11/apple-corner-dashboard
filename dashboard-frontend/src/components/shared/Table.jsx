@@ -11,7 +11,7 @@ const Table = ({ data, loading, showIcon = false }) => {
   const { pathname } = useLocation();
   const [id, setId] = useState("");
   const { update, loadingBtn } = useUpdate();
-  const { selectedLoading, success, updateSelected } = useSelected();
+  const { selectedLoading, updateSelected } = useSelected();
   const { deleteData, loadingDelete } = useDelete();
   const handleIdIndex = (id, index) => {
     setId(id);
@@ -21,10 +21,10 @@ const Table = ({ data, loading, showIcon = false }) => {
   const handleUpdateHero = async (e) => {
     e.preventDefault();
     const target = e.target;
-    const image = target.image.files[0];
-    const title = target.title.value;
-    const description1 = target.description1.value;
-    const description2 = target.description1.value;
+    const image = target?.image?.files[0];
+    const title = target?.title?.value;
+    const description1 = target?.description1?.value;
+    const description2 = target?.description2?.value;
     await update({
       image,
       title,
@@ -35,12 +35,12 @@ const Table = ({ data, loading, showIcon = false }) => {
   };
   const handleUpdateEvent = async (e) => {
     e.preventDefault();
-    const target = e.target;
-    const image = target.image.files[0];
-    const icon = target.icon.files[0];
-    const title = target.title.value;
-    const description1 = target.description1.value;
-    const description2 = target.description1.value;
+    const target = e?.target;
+    const image = target?.image?.files[0];
+    const icon = target?.icon?.files[0];
+    const title = target?.title?.value;
+    const description1 = target?.description1?.value;
+    const description2 = target?.description2?.value;
     await update({
       image,
       icon,
@@ -52,12 +52,12 @@ const Table = ({ data, loading, showIcon = false }) => {
   };
   const handleUpdateProduct = async (e) => {
     e.preventDefault();
-    const target = e.target;
-    const image = target.image.files[0];
-    const icon = target.icon.files[0];
-    const title = target.title.value;
-    const description1 = target.description1.value;
-    const description2 = target.description1.value;
+    const target = e?.target;
+    const image = target?.image?.files[0];
+    const icon = target?.icon?.files[0];
+    const title = target?.title?.value;
+    const description1 = target?.description1?.value;
+    const description2 = target?.description2?.value;
     await update({
       image,
       icon,
@@ -259,6 +259,7 @@ const Table = ({ data, loading, showIcon = false }) => {
                             <input
                               className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
                               name="title"
+                              defaultValue={item?.title}
                             />
                           </div>
                         ) : pathname === "/product" ? (
@@ -267,6 +268,7 @@ const Table = ({ data, loading, showIcon = false }) => {
                             <input
                               className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
                               name="title"
+                              defaultValue={item?.title}
                             />
                           </div>
                         ) : (
@@ -277,6 +279,7 @@ const Table = ({ data, loading, showIcon = false }) => {
                           <input
                             className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
                             name="description1"
+                            defaultValue={item?.description1}
                           />
                         </div>
                         <div className="flex flex-col gap-2">
@@ -284,6 +287,7 @@ const Table = ({ data, loading, showIcon = false }) => {
                           <input
                             className="bg-gray-300 text-xl outline-none border-none w-full h-12 p-4"
                             name="description2"
+                            defaultValue={item?.description2}
                           />
                         </div>
                         <button
